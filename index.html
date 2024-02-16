@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechKey Monk <br>Aptitude Test</br></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="TechKey Monk Logo" class="logo">
+        <h1>TechKey Monk - Aptitude Test </h1>
+        <div id="registration-container">
+            <form id="registration-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required><br><br>
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Student">Student</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="test-container" style="display: none;">
+           
+            <div id="question-container">
+                <p id="question">Question goes here...</p>
+                <div id="options">
+                    <label for="option1"><input type="radio" name="option" id="option1"> Option 1</label>
+                    <label for="option2"><input type="radio" name="option" id="option2"> Option 2</label>
+                    <label for="option3"><input type="radio" name="option" id="option3"> Option 3</label>
+                    <label for="option4"><input type="radio" name="option" id="option4"> Option 4</label>
+                </div>
+                <button id="next-btn">Next</button>
+            </div>
+            <div id="result-container">
+                <h2>Your Score:</h2>
+                <p id="score">0</p>
+                <button id="restart-btn">Restart Test</button>
+              
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+
+        
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            
+            var name = document.getElementById("name").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var category = document.getElementById("category").value;
+            
+           
+            document.getElementById("test-container").style.display = "block";
+            document.getElementById("registration-container").style.display = "none";
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechKey Monk <br>Aptitude Test</br></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="TechKey Monk Logo" class="logo">
+        <h1>TechKey Monk - Aptitude Test </h1>
+        <div id="registration-container">
+            <form id="registration-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required><br><br>
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="category">Category:</label>
+                <select id="category" name="category" required onchange="showAdditionalFields()">
+                    <option value="">Select Category</option>
+                    <option value="Student">Student</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+                <div id="additional-fields" style="display: none;">
+                   
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="test-container" style="display: none;">
+           
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function showAdditionalFields() {
+            var category = document.getElementById("category").value;
+            var additionalFieldsContainer = document.getElementById("additional-fields");
+            additionalFieldsContainer.innerHTML = ""; 
+
+            if (category === "Student") {
+                additionalFieldsContainer.innerHTML = `
+                    <label for="year">Year:</label>
+                    <input type="text" id="year" name="year" required><br><br>
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" required><br><br>
+                `;
+            } else if (category === "Professional") {
+                additionalFieldsContainer.innerHTML = `
+                    <label for="company">Company/Business Name:</label>
+                    <input type="text" id="company" name="company" required><br><br>
+                `;
+            } else if (category === "Other") {
+                additionalFieldsContainer.innerHTML = `
+                    <label for="otherInfo">Other Information:</label>
+                    <textarea id="otherInfo" name="otherInfo" required></textarea><br><br>
+                `;
+            }
+
+            additionalFieldsContainer.style.display = "block";
+        }
+
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            document.getElementById("test-container").style.display = "block";
+            document.getElementById("registration-container").style.display = "none";
+        });
+    </script>
+</body>
+</html> -->
+
